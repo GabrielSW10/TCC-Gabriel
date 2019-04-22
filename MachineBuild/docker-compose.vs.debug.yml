@@ -1,0 +1,13 @@
+version: '3.4'
+
+services:
+  machinebuild:
+    image: machinebuild:dev
+    build:
+      args:
+        source: ${DOCKER_BUILD_SOURCE}
+    volumes:
+      - .\MachineBuild:C:\inetpub\wwwroot
+      - ~\msvsmon:C:\msvsmon:ro
+    labels:
+      - "com.microsoft.visualstudio.targetoperatingsystem=windows"

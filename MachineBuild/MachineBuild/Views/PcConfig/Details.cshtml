@@ -1,0 +1,115 @@
+﻿@model MachineBuild.Models.PcConfig
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PcConfig</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CpuCooler.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CpuCooler.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DiscoRigido.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiscoRigido.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fonte.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fonte.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gabinete.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gabinete.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Memoria.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Memoria.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlacaMae.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlacaMae.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlacaVideo.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlacaVideo.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Processador.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Processador.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SistemaOperacional.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SistemaOperacional.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SSD.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SSD.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+    </dl>
+
+    <table border="0" cellpadding="20" cellspacing="80">
+        <tr>
+            <td>@Html.Raw(@Html.ActionLink("[replacetext]", "Index", "Processador").ToHtmlString().Replace("[replacetext]", "<img src=\"/Img/battlefield5.PNG\" width=200 height=200>"))</td>
+            <td>@Html.Raw(@Html.ActionLink("[replacetext]", "Index", "PlacaMae").ToHtmlString().Replace("[replacetext]", "<img src=\"/Img/leagueoflegends.PNG\" width=200 height=200>"))</td>
+            <td>@Html.Raw(@Html.ActionLink("[replacetext]", "Index", "PlacaVideo").ToHtmlString().Replace("[replacetext]", "<img src=\"/Img/counterstrike.PNG\" width=200 height=200>"))</td>
+        </tr>
+    </table>
+</div>
+
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

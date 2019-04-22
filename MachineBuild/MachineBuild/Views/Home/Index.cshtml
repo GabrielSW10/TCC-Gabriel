@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Build Machine</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Monte do ZERO</h2>
+        <p>
+           Escolha peça por peça para montar a configuração do seu jeito.
+        </p>
+        <p><a class="btn btn-default" @Html.ActionLink("Veja mais", "index", "PcConfig")</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>O que você quer jogar?</h2>
+        <p>Escolha um jogo e veja configurações recomendadas.</p>
+        <p><a class="btn btn-default" @Html.ActionLink("Veja mais", "index", "Jogo")</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Qual sua prioridade?</h2>
+        <p>Veja configurações de computadores para estudo ou trabalho.</p>
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Veja mais &raquo;</a></p>
+    </div>
+</div>

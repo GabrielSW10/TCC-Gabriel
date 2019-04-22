@@ -1,0 +1,93 @@
+﻿@model IEnumerable<MachineBuild.Models.PcConfig>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Builds</h2>
+
+<p>
+    @Html.ActionLink("Criar nova configuração", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Nome")
+        </th>
+        <th>
+            @Html.DisplayName("Processador")
+        </th>
+        <th>
+            @Html.DisplayName("Placa Mãe")
+        </th>
+        <th>
+            @Html.DisplayName("Placa de Vídeo")
+        </th>
+        <th>
+            @Html.DisplayName("Memoria")
+        </th>
+        <th>
+            @Html.DisplayName("Disco Rígido")
+        </th>
+        <th>
+            @Html.DisplayName("SSD")
+        </th>
+        <th>
+            @Html.DisplayName("CPU Cooler")
+        </th>
+        <th>
+            @Html.DisplayName("Fonte")
+        </th>
+        <th>
+            @Html.DisplayName("Gabinete")
+        </th>
+        <th>
+            @Html.DisplayName("Sistema Operacional")
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Processador.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PlacaMae.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PlacaVideo.Nome)
+        </td>  
+        <td>
+            @Html.DisplayFor(modelItem => item.Memoria.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiscoRigido.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SSD.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CpuCooler.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fonte.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gabinete.Nome)
+        </td>      
+        <td>
+            @Html.DisplayFor(modelItem => item.SistemaOperacional.Nome)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Deletar", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

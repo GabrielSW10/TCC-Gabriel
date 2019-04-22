@@ -1,0 +1,55 @@
+﻿@model IEnumerable<MachineBuild.Models.Peca>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Peças</h2>
+
+<img class=\"logo \" />
+
+<table border="0" cellpadding="20" cellspacing="80">
+    <tr>
+        <td>@Html.Raw(@Html.ActionLink("[replacetext]", "Index", "Processador").ToHtmlString().Replace("[replacetext]", "<img src=\"/Img/processador.PNG\" width=200 height=200>"))</td>
+        <td>@Html.Raw(@Html.ActionLink("[replacetext]", "Index", "PlacaMae").ToHtmlString().Replace("[replacetext]", "<img src=\"/Img/placaMae.PNG\" width=200 height=200>"))</td>
+        <td>@Html.Raw(@Html.ActionLink("[replacetext]", "Index", "PlacaVideo").ToHtmlString().Replace("[replacetext]", "<img src=\"/Img/placaVideo.PNG\" width=200 height=200>"))</td>
+        <td>@Html.Raw(@Html.ActionLink("[replacetext]", "Index", "Fonte").ToHtmlString().Replace("[replacetext]", "<img src=\"/Img/fonte.PNG\" width=200 height=200>"))</td>
+        <td>@Html.Raw(@Html.ActionLink("[replacetext]", "Index", "Memoria").ToHtmlString().Replace("[replacetext]", "<img src=\"/Img/memoria.PNG\" width=200 height=200>"))</td>
+    </tr>
+    <tr>
+        <td>@Html.Raw(@Html.ActionLink("[replacetext]", "Index", "SSD").ToHtmlString().Replace("[replacetext]", "<img src=\"/Img/ssd.PNG\" width=200 height=200>"))</td>
+        <td>@Html.Raw(@Html.ActionLink("[replacetext]", "Index", "CpuCooler").ToHtmlString().Replace("[replacetext]", "<img src=\"/Img/cpuCooler.PNG\" width=200 height=200>"))</td>
+        <td>@Html.Raw(@Html.ActionLink("[replacetext]", "Index", "DiscoRigido").ToHtmlString().Replace("[replacetext]", "<img src=\"/Img/discoRigido.PNG\" width=200 height=200>"))</td>
+        <td>@Html.Raw(@Html.ActionLink("[replacetext]", "Index", "Gabinete").ToHtmlString().Replace("[replacetext]", "<img src=\"/Img/gabinete.PNG\" width=200 height=200>"))</td>
+        <td>@Html.Raw(@Html.ActionLink("[replacetext]", "Index", "SistemaOperacional").ToHtmlString().Replace("[replacetext]", "<img src=\"/Img/sistemaOperacional.PNG\" width=200 height=200>"))</td>
+    </tr>
+</table>
+
+@*<table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descricao)
+            </th>
+            <th></th>
+        </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descricao)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            </td>
+        </tr>
+    }
+
+    </table>*@

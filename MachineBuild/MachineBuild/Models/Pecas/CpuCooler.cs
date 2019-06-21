@@ -14,7 +14,7 @@ namespace MachineBuild.Models
         public string Descricao { get; set; }
         public string Marca { get; set; }
         public double PrecoMedio { get; set; }
-        public double ConsumoWatts { get; set; }      
-        
+        public double ConsumoWatts { get; set; }
+        public string Link { get; set; }
     }
 }

@@ -7,10 +7,10 @@
 <h2>Criar Configuração</h2>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -103,8 +103,24 @@
         </div>
 
         <div class="form-group">
+            @Html.LabelFor(model => model.tipo, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.tipo, new SelectList(new List<Object> { new { value = "minima", text = "Mínima" }, new { value = "recomendada", text = "Recomendada" } }, "value", "text"), htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.tipo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.precoMedioFinal, "Preço Médio Final", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.precoMedioFinal, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.precoMedioFinal, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Salvar" class="btn btn-default" />
             </div>
         </div>
     </div>
@@ -121,16 +137,53 @@
             $.get("/PcConfig/GetPlacaMaeList", { ProcessadorID: $("#ProcessadorID").val() }, function (data) {
                 $("#PlacaMaeID").empty();
                 $.each(data, function (index, row) {
-                    $("#PlacaMaeID").append("<option value='" + row.PlacaMaeID + "'>" + row.PlacaMae.Nome + "</option>")
+                    $("#PlacaMaeID").append("<option value='" + row.Id + "'>" + row.Nome + "</option>")
                 });
-            });        
+            });
         })
     });
 </script>
 
 <script>
     $(document).ready(function () {
-        $("#PlacaVideoID").change(function ()  {
+        $("#PlacaMaeID").change(function () {
+            $.get("/PcConfig/GetPlacaVideoList", { PlacaMaeID: $("#PlacaMaeID").val() }, function (data) {
+                $("#PlacaVideoID").empty();
+                $.each(data, function (index, row) {
+                    $("#PlacaVideoID").append("<option value='" + row.Id + "'>" + row.Nome + "</option>")
+                });
+            });
+        })
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+        $("#PlacaMaeID").change(function () {
+            $.get("/PcConfig/GetMemoriaList", { PlacaMaeID: $("#PlacaMaeID").val() }, function (data) {
+                $("#MemoriaID").empty();
+                $.each(data, function (index, row) {
+                    $("#MemoriaID").append("<option value='" + row.Id + "'>" + row.Nome + "</option>")
+                });
+            });
+        })
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+        $("#FonteID").change(function () {
+            $.get("/PcConfig/GetPrecoMedioFinal", { ProcessadorID: $("#ProcessadorID").val(), PlacaMaeID: $("#PlacaMaeID").val(), PlacaVideoID: $("#PlacaVideoID").val(), MemoriaID: $("#MemoriaID").val(), SSDID: $("#SSDID").val(), DiscoRigidoID: $("#DiscoRigidoID").val(), GabineteID: $("#GabineteID").val(), CpuCoolerID: $("#CpuCoolerID").val(), SistemaOperacionalID: $("#SistemaOperacionalID").val(), FonteID: $("#FonteID").val() }, function (data) {
+                $("#precoMedioFinal").empty();
+                $("#precoMedioFinal").val(data)
+            });
+        })
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+        $("#PlacaVideoID").change(function () {
             $.get("/PcConfig/GetFonteList", { ProcessadorID: $("#ProcessadorID").val(), PlacaVideoID: $("#PlacaVideoID").val(), PlacaMaeID: $("#PlacaMaeID").val() }, function (data) {
                 $("#FonteID").empty();
                 $.each(data, function (index, row) {

@@ -13,7 +13,10 @@ namespace MachineBuild.Models
         public string Nome { get; set; }
         public string Descricao { get; set; }
         public string Marca { get; set; }
+        public string TipoRam { get; set; }
+        public double Frequencia { get; set; }
         public double PrecoMedio { get; set; }
         public double ConsumoWatts { get; set; }
+        public string Link { get; set; }
     }
 }

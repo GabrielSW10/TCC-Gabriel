@@ -1,13 +1,13 @@
 ﻿@model MachineBuild.Models.PlacaVideo
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detalhes";
 }
 
-<h2>Details</h2>
+<h2>Detalhes</h2>
 
 <div>
-    <h4>PlacaVideo</h4>
+    <h4>Placa de Vídeo</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -19,7 +19,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Descricao)
+            @Html.DisplayName("Descrição")
         </dt>
 
         <dd>
@@ -35,7 +35,15 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.PrecoMedio)
+            @Html.DisplayNameFor(model => model.Barramento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Barramento)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Preço Médio")
         </dt>
 
         <dd>
@@ -43,7 +51,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.ConsumoWatts)
+            @Html.DisplayName("Consumo em Watts")
         </dt>
 
         <dd>
@@ -51,7 +59,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.NotaPerformance)
+            @Html.DisplayName("Nota Performance")
         </dt>
 
         <dd>
@@ -61,6 +69,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Editar", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Voltar", "Index")
 </p>

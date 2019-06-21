@@ -59,5 +59,9 @@ namespace MachineBuild.Models
         [Required]
         public virtual int FonteID { get; set; }
         public virtual Fonte Fonte { get; set; }
+
+        public string tipo { get; set; }
+
+        public double precoMedioFinal { get; set; }
     }
 }

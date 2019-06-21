@@ -19,7 +19,13 @@ namespace MachineBuild.Models
         public string ProcessadorNota { get; set; }
 
         [ForeignKey("PcConfig")]
-        public virtual int PcConfigID { get; set; }
+        public virtual int? PcConfigID { get; set; }
         public virtual PcConfig PcConfig { get; set; }
+
+        [ForeignKey("RecomendadaConfig")]
+        public virtual int? RecomendadaConfigID { get; set; }
+        public virtual PcConfig RecomendadaConfig { get; set; }
+
+        public string configRecomendada { get; set; }
     }
 }

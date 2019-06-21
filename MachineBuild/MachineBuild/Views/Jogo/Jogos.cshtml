@@ -1,0 +1,28 @@
+﻿@model IEnumerable<MachineBuild.Models.Jogo>
+
+@{
+    ViewBag.Title = "Jogos";
+}
+
+<h2>Escolha um Jogo</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("")
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr style="margin-top:50px">
+            @{
+                var base64 = Convert.ToBase64String(item.ImageByte);
+                var imgsrc = string.Format("data:image/gif;base64,{0}", base64);
+                @Html.Raw(@Html.ActionLink("[replacetext]", "JogoConfig", new { id = item.Id }).ToHtmlString().Replace("[replacetext]", "<img src=" + @imgsrc + " width=150px height=150px style=\"margin-top:30px; margin-right:30px\">"))
+            }
+        </tr>
+     }
+
+</table>

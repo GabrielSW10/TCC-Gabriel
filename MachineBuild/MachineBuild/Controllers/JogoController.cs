@@ -20,6 +20,37 @@ namespace MachineBuild.Controllers
             var jogos = db.Jogos.Include(j => j.PcConfig);
             return View(jogos.ToList());
         }
+
+        public JsonResult GetConfigMinimaList()
+        {
+            db.Configuration.ProxyCreationEnabled = false;
+            List<PcConfig> pcConfig = db.Configs.Where(x => x.tipo == "minima").ToList();
+
+            return Json(pcConfig, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult GetConfigRecomendadaList()
+        {
+            db.Configuration.ProxyCreationEnabled = false;
+            List<PcConfig> pcConfig = db.Configs.Where(x => x.tipo == "recomendada").ToList();
+
+            return Json(pcConfig, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult GetNomeRecomendada(String Nome)
+        {
+            db.Configuration.ProxyCreationEnabled = false;
+
+            List<PcConfig> pcConfig = db.Configs.Where(x => x.Id.ToString() == "29").ToList();
+            String pcConfigNome = pcConfig.FirstOrDefault().Nome;
+            return Json(pcConfigNome, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult Jogos()
+        {
+            var jogos = db.Jogos.Include(j => j.PcConfig);
+            return View(jogos.ToList());
+        }
         [HttpPost]
         public ActionResult AddImage(Jogo model, HttpPostedFileBase image1)
         {
@@ -49,6 +80,20 @@ namespace MachineBuild.Controllers
             return View(jogo);
         }
 
+        public ActionResult JogoConfig(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Jogo jogo = db.Jogos.Find(id);
+            if (jogo == null)
+            {
+                return HttpNotFound();
+            }
+            return View(jogo);
+        }
+
         // GET: Jogo/Create
         public ActionResult Create()
         {
@@ -61,7 +106,7 @@ namespace MachineBuild.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Nome,Descricao,Desenvolvedora,ImageByte,PlacaVideoNota,ProcessadorNota,PcConfigID")] Jogo jogo, HttpPostedFileBase image1)
+        public ActionResult Create([Bind(Include = "Id,Nome,Descricao,Desenvolvedora,ImageByte,PlacaVideoNota,ProcessadorNota,PcConfigID, configRecomendada, RecomendadaConfigID")] Jogo jogo, HttpPostedFileBase image1)
         {
             if (ModelState.IsValid)
             {

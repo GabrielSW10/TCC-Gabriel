@@ -15,13 +15,15 @@
         <p><a class="btn btn-default" @Html.ActionLink("Veja mais", "index", "PcConfig")</a></p>
     </div>
     <div class="col-md-4">
-        <h2>O que você quer jogar?</h2>
-        <p>Escolha um jogo e veja configurações recomendadas.</p>
-        <p><a class="btn btn-default" @Html.ActionLink("Veja mais", "index", "Jogo")</a></p>
+        <table border="0" cellpadding="20" cellspacing="80">
+            <tr>
+                <td>@Html.Raw(@Html.ActionLink("[replacetext]", "Index", "Home").ToHtmlString().Replace("[replacetext]", "<img src=\"/Img/cuboMagico.PNG\" width=300 height=300>"))</td>
+            </tr>
+        </table>
     </div>
     <div class="col-md-4">
-        <h2>Qual sua prioridade?</h2>
-        <p>Veja configurações de computadores para estudo ou trabalho.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Veja mais &raquo;</a></p>
+        <h2>O que você quer jogar?</h2>
+        <p>Escolha um jogo e veja configurações recomendadas.</p>
+        <p><a class="btn btn-default" @Html.ActionLink("Veja mais", "Jogos", "Jogo")</a></p>
     </div>
 </div>

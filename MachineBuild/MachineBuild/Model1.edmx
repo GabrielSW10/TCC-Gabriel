@@ -1,0 +1,1184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="MachineBuild.Models.ContextoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+          <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CpuCoolers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar(max)" />
+          <Property Name="Descricao" Type="nvarchar(max)" />
+          <Property Name="Marca" Type="nvarchar(max)" />
+          <Property Name="PrecoMedio" Type="float" Nullable="false" />
+          <Property Name="ConsumoWatts" Type="float" Nullable="false" />
+          <Property Name="Link" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="DiscoRigidoes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar(max)" />
+          <Property Name="Descricao" Type="nvarchar(max)" />
+          <Property Name="Marca" Type="nvarchar(max)" />
+          <Property Name="PrecoMedio" Type="float" Nullable="false" />
+          <Property Name="ConsumoWatts" Type="float" Nullable="false" />
+          <Property Name="Link" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Fontes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar(max)" />
+          <Property Name="Descricao" Type="nvarchar(max)" />
+          <Property Name="Marca" Type="nvarchar(max)" />
+          <Property Name="PrecoMedio" Type="float" Nullable="false" />
+          <Property Name="Watts" Type="float" Nullable="false" />
+          <Property Name="Link" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Gabinetes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar(max)" />
+          <Property Name="Descricao" Type="nvarchar(max)" />
+          <Property Name="Marca" Type="nvarchar(max)" />
+          <Property Name="PrecoMedio" Type="float" Nullable="false" />
+          <Property Name="ConsumoWatts" Type="float" Nullable="false" />
+          <Property Name="Link" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Jogoes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar(max)" />
+          <Property Name="Descricao" Type="nvarchar(max)" />
+          <Property Name="Desenvolvedora" Type="nvarchar(max)" />
+          <Property Name="ImageByte" Type="varbinary(max)" />
+          <Property Name="PcConfigID" Type="int" />
+          <Property Name="PlacaVideoNota" Type="nvarchar(max)" />
+          <Property Name="ProcessadorNota" Type="nvarchar(max)" />
+          <Property Name="configRecomendada" Type="nvarchar(max)" />
+          <Property Name="RecomendadaConfigID" Type="int" />
+        </EntityType>
+        <EntityType Name="Memorias">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar(max)" />
+          <Property Name="Descricao" Type="nvarchar(max)" />
+          <Property Name="Marca" Type="nvarchar(max)" />
+          <Property Name="PrecoMedio" Type="float" Nullable="false" />
+          <Property Name="ConsumoWatts" Type="float" Nullable="false" />
+          <Property Name="TipoRam" Type="nvarchar(max)" />
+          <Property Name="Link" Type="nvarchar(max)" />
+          <Property Name="Frequencia" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PcConfigs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="CpuCoolerID" Type="int" Nullable="false" />
+          <Property Name="ProcessadorID" Type="int" Nullable="false" />
+          <Property Name="PlacaMaeID" Type="int" Nullable="false" />
+          <Property Name="PlacaVideoID" Type="int" Nullable="false" />
+          <Property Name="MemoriaID" Type="int" Nullable="false" />
+          <Property Name="SSDID" Type="int" Nullable="false" />
+          <Property Name="DiscoRigidoID" Type="int" Nullable="false" />
+          <Property Name="GabineteID" Type="int" Nullable="false" />
+          <Property Name="SistemaOperacionalID" Type="int" Nullable="false" />
+          <Property Name="FonteID" Type="int" Nullable="false" />
+          <Property Name="precoMedioFinal" Type="float" Nullable="false" />
+          <Property Name="tipo" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Pecas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar(max)" />
+          <Property Name="Descricao" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="PlacaMaes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar(max)" />
+          <Property Name="Descricao" Type="nvarchar(max)" />
+          <Property Name="Marca" Type="nvarchar(max)" />
+          <Property Name="PrecoMedio" Type="float" Nullable="false" />
+          <Property Name="ConsumoWatts" Type="float" Nullable="false" />
+          <Property Name="Socket" Type="nvarchar(max)" />
+          <Property Name="Barramento" Type="nvarchar(max)" />
+          <Property Name="TipoRam" Type="nvarchar(max)" />
+          <Property Name="Link" Type="nvarchar(max)" />
+          <Property Name="FrequenciaMaxima" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PlacaVideos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar(max)" />
+          <Property Name="Descricao" Type="nvarchar(max)" />
+          <Property Name="Marca" Type="nvarchar(max)" />
+          <Property Name="PrecoMedio" Type="float" Nullable="false" />
+          <Property Name="ConsumoWatts" Type="float" Nullable="false" />
+          <Property Name="NotaPerformance" Type="float" Nullable="false" />
+          <Property Name="Barramento" Type="nvarchar(max)" />
+          <Property Name="Link" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="ProcessadorPlacaMaes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProcessadorID" Type="int" Nullable="false" />
+          <Property Name="PlacaMaeID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Processadors">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar(max)" />
+          <Property Name="Descricao" Type="nvarchar(max)" />
+          <Property Name="Marca" Type="nvarchar(max)" />
+          <Property Name="PrecoMedio" Type="float" Nullable="false" />
+          <Property Name="ConsumoWatts" Type="float" Nullable="false" />
+          <Property Name="NotaPerformance" Type="float" Nullable="false" />
+          <Property Name="Socket" Type="nvarchar(max)" />
+          <Property Name="Link" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="SistemaOperacionals">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar(max)" />
+          <Property Name="Descricao" Type="nvarchar(max)" />
+          <Property Name="Marca" Type="nvarchar(max)" />
+          <Property Name="PrecoMedio" Type="float" Nullable="false" />
+          <Property Name="ConsumoWatts" Type="float" Nullable="false" />
+          <Property Name="Link" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="SSDs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar(max)" />
+          <Property Name="Descricao" Type="nvarchar(max)" />
+          <Property Name="Marca" Type="nvarchar(max)" />
+          <Property Name="PrecoMedio" Type="float" Nullable="false" />
+          <Property Name="ConsumoWatts" Type="float" Nullable="false" />
+          <Property Name="Link" Type="nvarchar(max)" />
+        </EntityType>
+        <Association Name="FK_dbo_Jogoes_dbo_PcConfigs_PcConfigID">
+          <End Role="PcConfigs" Type="Self.PcConfigs" Multiplicity="0..1" />
+          <End Role="Jogoes" Type="Self.Jogoes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PcConfigs">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Jogoes">
+              <PropertyRef Name="PcConfigID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Jogoes_dbo_PcConfigs_RecomendadaConfigID">
+          <End Role="PcConfigs" Type="Self.PcConfigs" Multiplicity="0..1" />
+          <End Role="Jogoes" Type="Self.Jogoes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PcConfigs">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Jogoes">
+              <PropertyRef Name="RecomendadaConfigID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_PcConfigs_dbo_CpuCoolers_CpuCoolerID">
+          <End Role="CpuCoolers" Type="Self.CpuCoolers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PcConfigs" Type="Self.PcConfigs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CpuCoolers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PcConfigs">
+              <PropertyRef Name="CpuCoolerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_PcConfigs_dbo_DiscoRigidoes_DiscoRigidoID">
+          <End Role="DiscoRigidoes" Type="Self.DiscoRigidoes" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PcConfigs" Type="Self.PcConfigs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DiscoRigidoes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PcConfigs">
+              <PropertyRef Name="DiscoRigidoID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_PcConfigs_dbo_Fontes_FonteID">
+          <End Role="Fontes" Type="Self.Fontes" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PcConfigs" Type="Self.PcConfigs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fontes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PcConfigs">
+              <PropertyRef Name="FonteID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_PcConfigs_dbo_Gabinetes_GabineteID">
+          <End Role="Gabinetes" Type="Self.Gabinetes" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PcConfigs" Type="Self.PcConfigs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gabinetes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PcConfigs">
+              <PropertyRef Name="GabineteID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_PcConfigs_dbo_Memorias_MemoriaID">
+          <End Role="Memorias" Type="Self.Memorias" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PcConfigs" Type="Self.PcConfigs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Memorias">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PcConfigs">
+              <PropertyRef Name="MemoriaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_PcConfigs_dbo_PlacaMaes_PlacaMaeID">
+          <End Role="PlacaMaes" Type="Self.PlacaMaes" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PcConfigs" Type="Self.PcConfigs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlacaMaes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PcConfigs">
+              <PropertyRef Name="PlacaMaeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_PcConfigs_dbo_PlacaVideos_PlacaVideoID">
+          <End Role="PlacaVideos" Type="Self.PlacaVideos" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PcConfigs" Type="Self.PcConfigs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlacaVideos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PcConfigs">
+              <PropertyRef Name="PlacaVideoID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_PcConfigs_dbo_Processadors_ProcessadorID">
+          <End Role="Processadors" Type="Self.Processadors" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PcConfigs" Type="Self.PcConfigs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Processadors">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PcConfigs">
+              <PropertyRef Name="ProcessadorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_PcConfigs_dbo_SistemaOperacionals_SistemaOperacionalID">
+          <End Role="SistemaOperacionals" Type="Self.SistemaOperacionals" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PcConfigs" Type="Self.PcConfigs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SistemaOperacionals">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PcConfigs">
+              <PropertyRef Name="SistemaOperacionalID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_PcConfigs_dbo_SSDs_SSDID">
+          <End Role="SSDs" Type="Self.SSDs" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PcConfigs" Type="Self.PcConfigs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SSDs">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PcConfigs">
+              <PropertyRef Name="SSDID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_ProcessadorPlacaMaes_dbo_PlacaMaes_PlacaMaeID">
+          <End Role="PlacaMaes" Type="Self.PlacaMaes" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ProcessadorPlacaMaes" Type="Self.ProcessadorPlacaMaes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlacaMaes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProcessadorPlacaMaes">
+              <PropertyRef Name="PlacaMaeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_ProcessadorPlacaMaes_dbo_Processadors_ProcessadorID">
+          <End Role="Processadors" Type="Self.Processadors" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ProcessadorPlacaMaes" Type="Self.ProcessadorPlacaMaes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Processadors">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProcessadorPlacaMaes">
+              <PropertyRef Name="ProcessadorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MachineBuildModelsContextoModelStoreContainer">
+          <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CpuCoolers" EntityType="Self.CpuCoolers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DiscoRigidoes" EntityType="Self.DiscoRigidoes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Fontes" EntityType="Self.Fontes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Gabinetes" EntityType="Self.Gabinetes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Jogoes" EntityType="Self.Jogoes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Memorias" EntityType="Self.Memorias" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PcConfigs" EntityType="Self.PcConfigs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Pecas" EntityType="Self.Pecas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PlacaMaes" EntityType="Self.PlacaMaes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PlacaVideos" EntityType="Self.PlacaVideos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProcessadorPlacaMaes" EntityType="Self.ProcessadorPlacaMaes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Processadors" EntityType="Self.Processadors" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SistemaOperacionals" EntityType="Self.SistemaOperacionals" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SSDs" EntityType="Self.SSDs" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_dbo_Jogoes_dbo_PcConfigs_PcConfigID" Association="Self.FK_dbo_Jogoes_dbo_PcConfigs_PcConfigID">
+            <End Role="PcConfigs" EntitySet="PcConfigs" />
+            <End Role="Jogoes" EntitySet="Jogoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Jogoes_dbo_PcConfigs_RecomendadaConfigID" Association="Self.FK_dbo_Jogoes_dbo_PcConfigs_RecomendadaConfigID">
+            <End Role="PcConfigs" EntitySet="PcConfigs" />
+            <End Role="Jogoes" EntitySet="Jogoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_PcConfigs_dbo_CpuCoolers_CpuCoolerID" Association="Self.FK_dbo_PcConfigs_dbo_CpuCoolers_CpuCoolerID">
+            <End Role="CpuCoolers" EntitySet="CpuCoolers" />
+            <End Role="PcConfigs" EntitySet="PcConfigs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_PcConfigs_dbo_DiscoRigidoes_DiscoRigidoID" Association="Self.FK_dbo_PcConfigs_dbo_DiscoRigidoes_DiscoRigidoID">
+            <End Role="DiscoRigidoes" EntitySet="DiscoRigidoes" />
+            <End Role="PcConfigs" EntitySet="PcConfigs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_PcConfigs_dbo_Fontes_FonteID" Association="Self.FK_dbo_PcConfigs_dbo_Fontes_FonteID">
+            <End Role="Fontes" EntitySet="Fontes" />
+            <End Role="PcConfigs" EntitySet="PcConfigs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_PcConfigs_dbo_Gabinetes_GabineteID" Association="Self.FK_dbo_PcConfigs_dbo_Gabinetes_GabineteID">
+            <End Role="Gabinetes" EntitySet="Gabinetes" />
+            <End Role="PcConfigs" EntitySet="PcConfigs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_PcConfigs_dbo_Memorias_MemoriaID" Association="Self.FK_dbo_PcConfigs_dbo_Memorias_MemoriaID">
+            <End Role="Memorias" EntitySet="Memorias" />
+            <End Role="PcConfigs" EntitySet="PcConfigs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_PcConfigs_dbo_PlacaMaes_PlacaMaeID" Association="Self.FK_dbo_PcConfigs_dbo_PlacaMaes_PlacaMaeID">
+            <End Role="PlacaMaes" EntitySet="PlacaMaes" />
+            <End Role="PcConfigs" EntitySet="PcConfigs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_PcConfigs_dbo_PlacaVideos_PlacaVideoID" Association="Self.FK_dbo_PcConfigs_dbo_PlacaVideos_PlacaVideoID">
+            <End Role="PlacaVideos" EntitySet="PlacaVideos" />
+            <End Role="PcConfigs" EntitySet="PcConfigs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_PcConfigs_dbo_Processadors_ProcessadorID" Association="Self.FK_dbo_PcConfigs_dbo_Processadors_ProcessadorID">
+            <End Role="Processadors" EntitySet="Processadors" />
+            <End Role="PcConfigs" EntitySet="PcConfigs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_PcConfigs_dbo_SistemaOperacionals_SistemaOperacionalID" Association="Self.FK_dbo_PcConfigs_dbo_SistemaOperacionals_SistemaOperacionalID">
+            <End Role="SistemaOperacionals" EntitySet="SistemaOperacionals" />
+            <End Role="PcConfigs" EntitySet="PcConfigs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_PcConfigs_dbo_SSDs_SSDID" Association="Self.FK_dbo_PcConfigs_dbo_SSDs_SSDID">
+            <End Role="SSDs" EntitySet="SSDs" />
+            <End Role="PcConfigs" EntitySet="PcConfigs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_ProcessadorPlacaMaes_dbo_PlacaMaes_PlacaMaeID" Association="Self.FK_dbo_ProcessadorPlacaMaes_dbo_PlacaMaes_PlacaMaeID">
+            <End Role="PlacaMaes" EntitySet="PlacaMaes" />
+            <End Role="ProcessadorPlacaMaes" EntitySet="ProcessadorPlacaMaes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_ProcessadorPlacaMaes_dbo_Processadors_ProcessadorID" Association="Self.FK_dbo_ProcessadorPlacaMaes_dbo_Processadors_ProcessadorID">
+            <End Role="Processadors" EntitySet="Processadors" />
+            <End Role="ProcessadorPlacaMaes" EntitySet="ProcessadorPlacaMaes" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MachineBuild.Models.ContextoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="C__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CpuCooler">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Descricao" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Marca" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PrecoMedio" Type="Double" Nullable="false" />
+          <Property Name="ConsumoWatts" Type="Double" Nullable="false" />
+          <Property Name="Link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="PcConfigs" Relationship="Self.FK_dbo_PcConfigs_dbo_CpuCoolers_CpuCoolerID" FromRole="CpuCoolers" ToRole="PcConfigs" />
+        </EntityType>
+        <EntityType Name="DiscoRigido">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Descricao" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Marca" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PrecoMedio" Type="Double" Nullable="false" />
+          <Property Name="ConsumoWatts" Type="Double" Nullable="false" />
+          <Property Name="Link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="PcConfigs" Relationship="Self.FK_dbo_PcConfigs_dbo_DiscoRigidoes_DiscoRigidoID" FromRole="DiscoRigidoes" ToRole="PcConfigs" />
+        </EntityType>
+        <EntityType Name="Fonte">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Descricao" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Marca" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PrecoMedio" Type="Double" Nullable="false" />
+          <Property Name="Watts" Type="Double" Nullable="false" />
+          <Property Name="Link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="PcConfigs" Relationship="Self.FK_dbo_PcConfigs_dbo_Fontes_FonteID" FromRole="Fontes" ToRole="PcConfigs" />
+        </EntityType>
+        <EntityType Name="Gabinete">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Descricao" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Marca" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PrecoMedio" Type="Double" Nullable="false" />
+          <Property Name="ConsumoWatts" Type="Double" Nullable="false" />
+          <Property Name="Link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="PcConfigs" Relationship="Self.FK_dbo_PcConfigs_dbo_Gabinetes_GabineteID" FromRole="Gabinetes" ToRole="PcConfigs" />
+        </EntityType>
+        <EntityType Name="Jogo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Descricao" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Desenvolvedora" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ImageByte" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="PcConfigID" Type="Int32" />
+          <Property Name="PlacaVideoNota" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProcessadorNota" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="configRecomendada" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RecomendadaConfigID" Type="Int32" />
+          <NavigationProperty Name="PcConfig" Relationship="Self.FK_dbo_Jogoes_dbo_PcConfigs_PcConfigID" FromRole="Jogoes" ToRole="PcConfigs" />
+          <NavigationProperty Name="PcConfig1" Relationship="Self.FK_dbo_Jogoes_dbo_PcConfigs_RecomendadaConfigID" FromRole="Jogoes" ToRole="PcConfigs" />
+        </EntityType>
+        <EntityType Name="Memoria">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Descricao" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Marca" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PrecoMedio" Type="Double" Nullable="false" />
+          <Property Name="ConsumoWatts" Type="Double" Nullable="false" />
+          <Property Name="TipoRam" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Frequencia" Type="Double" Nullable="false" />
+          <NavigationProperty Name="PcConfigs" Relationship="Self.FK_dbo_PcConfigs_dbo_Memorias_MemoriaID" FromRole="Memorias" ToRole="PcConfigs" />
+        </EntityType>
+        <EntityType Name="PcConfig">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CpuCoolerID" Type="Int32" Nullable="false" />
+          <Property Name="ProcessadorID" Type="Int32" Nullable="false" />
+          <Property Name="PlacaMaeID" Type="Int32" Nullable="false" />
+          <Property Name="PlacaVideoID" Type="Int32" Nullable="false" />
+          <Property Name="MemoriaID" Type="Int32" Nullable="false" />
+          <Property Name="SSDID" Type="Int32" Nullable="false" />
+          <Property Name="DiscoRigidoID" Type="Int32" Nullable="false" />
+          <Property Name="GabineteID" Type="Int32" Nullable="false" />
+          <Property Name="SistemaOperacionalID" Type="Int32" Nullable="false" />
+          <Property Name="FonteID" Type="Int32" Nullable="false" />
+          <Property Name="precoMedioFinal" Type="Double" Nullable="false" />
+          <Property Name="tipo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CpuCooler" Relationship="Self.FK_dbo_PcConfigs_dbo_CpuCoolers_CpuCoolerID" FromRole="PcConfigs" ToRole="CpuCoolers" />
+          <NavigationProperty Name="DiscoRigido" Relationship="Self.FK_dbo_PcConfigs_dbo_DiscoRigidoes_DiscoRigidoID" FromRole="PcConfigs" ToRole="DiscoRigidoes" />
+          <NavigationProperty Name="Fonte" Relationship="Self.FK_dbo_PcConfigs_dbo_Fontes_FonteID" FromRole="PcConfigs" ToRole="Fontes" />
+          <NavigationProperty Name="Gabinete" Relationship="Self.FK_dbo_PcConfigs_dbo_Gabinetes_GabineteID" FromRole="PcConfigs" ToRole="Gabinetes" />
+          <NavigationProperty Name="Jogoes" Relationship="Self.FK_dbo_Jogoes_dbo_PcConfigs_PcConfigID" FromRole="PcConfigs" ToRole="Jogoes" />
+          <NavigationProperty Name="Jogoes1" Relationship="Self.FK_dbo_Jogoes_dbo_PcConfigs_RecomendadaConfigID" FromRole="PcConfigs" ToRole="Jogoes" />
+          <NavigationProperty Name="Memoria" Relationship="Self.FK_dbo_PcConfigs_dbo_Memorias_MemoriaID" FromRole="PcConfigs" ToRole="Memorias" />
+          <NavigationProperty Name="PlacaMae" Relationship="Self.FK_dbo_PcConfigs_dbo_PlacaMaes_PlacaMaeID" FromRole="PcConfigs" ToRole="PlacaMaes" />
+          <NavigationProperty Name="PlacaVideo" Relationship="Self.FK_dbo_PcConfigs_dbo_PlacaVideos_PlacaVideoID" FromRole="PcConfigs" ToRole="PlacaVideos" />
+          <NavigationProperty Name="Processador" Relationship="Self.FK_dbo_PcConfigs_dbo_Processadors_ProcessadorID" FromRole="PcConfigs" ToRole="Processadors" />
+          <NavigationProperty Name="SistemaOperacional" Relationship="Self.FK_dbo_PcConfigs_dbo_SistemaOperacionals_SistemaOperacionalID" FromRole="PcConfigs" ToRole="SistemaOperacionals" />
+          <NavigationProperty Name="SSD" Relationship="Self.FK_dbo_PcConfigs_dbo_SSDs_SSDID" FromRole="PcConfigs" ToRole="SSDs" />
+        </EntityType>
+        <EntityType Name="Peca">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Descricao" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="PlacaMae">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Descricao" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Marca" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PrecoMedio" Type="Double" Nullable="false" />
+          <Property Name="ConsumoWatts" Type="Double" Nullable="false" />
+          <Property Name="Socket" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Barramento" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TipoRam" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FrequenciaMaxima" Type="Double" Nullable="false" />
+          <NavigationProperty Name="PcConfigs" Relationship="Self.FK_dbo_PcConfigs_dbo_PlacaMaes_PlacaMaeID" FromRole="PlacaMaes" ToRole="PcConfigs" />
+          <NavigationProperty Name="ProcessadorPlacaMaes" Relationship="Self.FK_dbo_ProcessadorPlacaMaes_dbo_PlacaMaes_PlacaMaeID" FromRole="PlacaMaes" ToRole="ProcessadorPlacaMaes" />
+        </EntityType>
+        <EntityType Name="PlacaVideo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Descricao" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Marca" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PrecoMedio" Type="Double" Nullable="false" />
+          <Property Name="ConsumoWatts" Type="Double" Nullable="false" />
+          <Property Name="NotaPerformance" Type="Double" Nullable="false" />
+          <Property Name="Barramento" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="PcConfigs" Relationship="Self.FK_dbo_PcConfigs_dbo_PlacaVideos_PlacaVideoID" FromRole="PlacaVideos" ToRole="PcConfigs" />
+        </EntityType>
+        <EntityType Name="ProcessadorPlacaMae">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProcessadorID" Type="Int32" Nullable="false" />
+          <Property Name="PlacaMaeID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="PlacaMae" Relationship="Self.FK_dbo_ProcessadorPlacaMaes_dbo_PlacaMaes_PlacaMaeID" FromRole="ProcessadorPlacaMaes" ToRole="PlacaMaes" />
+          <NavigationProperty Name="Processador" Relationship="Self.FK_dbo_ProcessadorPlacaMaes_dbo_Processadors_ProcessadorID" FromRole="ProcessadorPlacaMaes" ToRole="Processadors" />
+        </EntityType>
+        <EntityType Name="Processador">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Descricao" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Marca" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PrecoMedio" Type="Double" Nullable="false" />
+          <Property Name="ConsumoWatts" Type="Double" Nullable="false" />
+          <Property Name="NotaPerformance" Type="Double" Nullable="false" />
+          <Property Name="Socket" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="PcConfigs" Relationship="Self.FK_dbo_PcConfigs_dbo_Processadors_ProcessadorID" FromRole="Processadors" ToRole="PcConfigs" />
+          <NavigationProperty Name="ProcessadorPlacaMaes" Relationship="Self.FK_dbo_ProcessadorPlacaMaes_dbo_Processadors_ProcessadorID" FromRole="Processadors" ToRole="ProcessadorPlacaMaes" />
+        </EntityType>
+        <EntityType Name="SistemaOperacional">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Descricao" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Marca" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PrecoMedio" Type="Double" Nullable="false" />
+          <Property Name="ConsumoWatts" Type="Double" Nullable="false" />
+          <Property Name="Link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="PcConfigs" Relationship="Self.FK_dbo_PcConfigs_dbo_SistemaOperacionals_SistemaOperacionalID" FromRole="SistemaOperacionals" ToRole="PcConfigs" />
+        </EntityType>
+        <EntityType Name="SSD">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Descricao" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Marca" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PrecoMedio" Type="Double" Nullable="false" />
+          <Property Name="ConsumoWatts" Type="Double" Nullable="false" />
+          <Property Name="Link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="PcConfigs" Relationship="Self.FK_dbo_PcConfigs_dbo_SSDs_SSDID" FromRole="SSDs" ToRole="PcConfigs" />
+        </EntityType>
+        <Association Name="FK_dbo_PcConfigs_dbo_CpuCoolers_CpuCoolerID">
+          <End Role="CpuCoolers" Type="Self.CpuCooler" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PcConfigs" Type="Self.PcConfig" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CpuCoolers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PcConfigs">
+              <PropertyRef Name="CpuCoolerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_PcConfigs_dbo_DiscoRigidoes_DiscoRigidoID">
+          <End Role="DiscoRigidoes" Type="Self.DiscoRigido" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PcConfigs" Type="Self.PcConfig" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DiscoRigidoes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PcConfigs">
+              <PropertyRef Name="DiscoRigidoID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_PcConfigs_dbo_Fontes_FonteID">
+          <End Role="Fontes" Type="Self.Fonte" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PcConfigs" Type="Self.PcConfig" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fontes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PcConfigs">
+              <PropertyRef Name="FonteID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_PcConfigs_dbo_Gabinetes_GabineteID">
+          <End Role="Gabinetes" Type="Self.Gabinete" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PcConfigs" Type="Self.PcConfig" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gabinetes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PcConfigs">
+              <PropertyRef Name="GabineteID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Jogoes_dbo_PcConfigs_PcConfigID">
+          <End Role="PcConfigs" Type="Self.PcConfig" Multiplicity="0..1" />
+          <End Role="Jogoes" Type="Self.Jogo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PcConfigs">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Jogoes">
+              <PropertyRef Name="PcConfigID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Jogoes_dbo_PcConfigs_RecomendadaConfigID">
+          <End Role="PcConfigs" Type="Self.PcConfig" Multiplicity="0..1" />
+          <End Role="Jogoes" Type="Self.Jogo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PcConfigs">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Jogoes">
+              <PropertyRef Name="RecomendadaConfigID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_PcConfigs_dbo_Memorias_MemoriaID">
+          <End Role="Memorias" Type="Self.Memoria" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PcConfigs" Type="Self.PcConfig" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Memorias">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PcConfigs">
+              <PropertyRef Name="MemoriaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_PcConfigs_dbo_PlacaMaes_PlacaMaeID">
+          <End Role="PlacaMaes" Type="Self.PlacaMae" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PcConfigs" Type="Self.PcConfig" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlacaMaes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PcConfigs">
+              <PropertyRef Name="PlacaMaeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_PcConfigs_dbo_PlacaVideos_PlacaVideoID">
+          <End Role="PlacaVideos" Type="Self.PlacaVideo" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PcConfigs" Type="Self.PcConfig" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlacaVideos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PcConfigs">
+              <PropertyRef Name="PlacaVideoID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_PcConfigs_dbo_Processadors_ProcessadorID">
+          <End Role="Processadors" Type="Self.Processador" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PcConfigs" Type="Self.PcConfig" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Processadors">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PcConfigs">
+              <PropertyRef Name="ProcessadorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_PcConfigs_dbo_SistemaOperacionals_SistemaOperacionalID">
+          <End Role="SistemaOperacionals" Type="Self.SistemaOperacional" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PcConfigs" Type="Self.PcConfig" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SistemaOperacionals">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PcConfigs">
+              <PropertyRef Name="SistemaOperacionalID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_PcConfigs_dbo_SSDs_SSDID">
+          <End Role="SSDs" Type="Self.SSD" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PcConfigs" Type="Self.PcConfig" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SSDs">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PcConfigs">
+              <PropertyRef Name="SSDID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_ProcessadorPlacaMaes_dbo_PlacaMaes_PlacaMaeID">
+          <End Role="PlacaMaes" Type="Self.PlacaMae" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ProcessadorPlacaMaes" Type="Self.ProcessadorPlacaMae" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlacaMaes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProcessadorPlacaMaes">
+              <PropertyRef Name="PlacaMaeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_ProcessadorPlacaMaes_dbo_Processadors_ProcessadorID">
+          <End Role="Processadors" Type="Self.Processador" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ProcessadorPlacaMaes" Type="Self.ProcessadorPlacaMae" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Processadors">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProcessadorPlacaMaes">
+              <PropertyRef Name="ProcessadorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Entities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+          <EntitySet Name="CpuCoolers" EntityType="Self.CpuCooler" />
+          <EntitySet Name="DiscoRigidoes" EntityType="Self.DiscoRigido" />
+          <EntitySet Name="Fontes" EntityType="Self.Fonte" />
+          <EntitySet Name="Gabinetes" EntityType="Self.Gabinete" />
+          <EntitySet Name="Jogoes" EntityType="Self.Jogo" />
+          <EntitySet Name="Memorias" EntityType="Self.Memoria" />
+          <EntitySet Name="PcConfigs" EntityType="Self.PcConfig" />
+          <EntitySet Name="Pecas" EntityType="Self.Peca" />
+          <EntitySet Name="PlacaMaes" EntityType="Self.PlacaMae" />
+          <EntitySet Name="PlacaVideos" EntityType="Self.PlacaVideo" />
+          <EntitySet Name="ProcessadorPlacaMaes" EntityType="Self.ProcessadorPlacaMae" />
+          <EntitySet Name="Processadors" EntityType="Self.Processador" />
+          <EntitySet Name="SistemaOperacionals" EntityType="Self.SistemaOperacional" />
+          <EntitySet Name="SSDs" EntityType="Self.SSD" />
+          <AssociationSet Name="FK_dbo_PcConfigs_dbo_CpuCoolers_CpuCoolerID" Association="Self.FK_dbo_PcConfigs_dbo_CpuCoolers_CpuCoolerID">
+            <End Role="CpuCoolers" EntitySet="CpuCoolers" />
+            <End Role="PcConfigs" EntitySet="PcConfigs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_PcConfigs_dbo_DiscoRigidoes_DiscoRigidoID" Association="Self.FK_dbo_PcConfigs_dbo_DiscoRigidoes_DiscoRigidoID">
+            <End Role="DiscoRigidoes" EntitySet="DiscoRigidoes" />
+            <End Role="PcConfigs" EntitySet="PcConfigs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_PcConfigs_dbo_Fontes_FonteID" Association="Self.FK_dbo_PcConfigs_dbo_Fontes_FonteID">
+            <End Role="Fontes" EntitySet="Fontes" />
+            <End Role="PcConfigs" EntitySet="PcConfigs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_PcConfigs_dbo_Gabinetes_GabineteID" Association="Self.FK_dbo_PcConfigs_dbo_Gabinetes_GabineteID">
+            <End Role="Gabinetes" EntitySet="Gabinetes" />
+            <End Role="PcConfigs" EntitySet="PcConfigs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Jogoes_dbo_PcConfigs_PcConfigID" Association="Self.FK_dbo_Jogoes_dbo_PcConfigs_PcConfigID">
+            <End Role="PcConfigs" EntitySet="PcConfigs" />
+            <End Role="Jogoes" EntitySet="Jogoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Jogoes_dbo_PcConfigs_RecomendadaConfigID" Association="Self.FK_dbo_Jogoes_dbo_PcConfigs_RecomendadaConfigID">
+            <End Role="PcConfigs" EntitySet="PcConfigs" />
+            <End Role="Jogoes" EntitySet="Jogoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_PcConfigs_dbo_Memorias_MemoriaID" Association="Self.FK_dbo_PcConfigs_dbo_Memorias_MemoriaID">
+            <End Role="Memorias" EntitySet="Memorias" />
+            <End Role="PcConfigs" EntitySet="PcConfigs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_PcConfigs_dbo_PlacaMaes_PlacaMaeID" Association="Self.FK_dbo_PcConfigs_dbo_PlacaMaes_PlacaMaeID">
+            <End Role="PlacaMaes" EntitySet="PlacaMaes" />
+            <End Role="PcConfigs" EntitySet="PcConfigs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_PcConfigs_dbo_PlacaVideos_PlacaVideoID" Association="Self.FK_dbo_PcConfigs_dbo_PlacaVideos_PlacaVideoID">
+            <End Role="PlacaVideos" EntitySet="PlacaVideos" />
+            <End Role="PcConfigs" EntitySet="PcConfigs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_PcConfigs_dbo_Processadors_ProcessadorID" Association="Self.FK_dbo_PcConfigs_dbo_Processadors_ProcessadorID">
+            <End Role="Processadors" EntitySet="Processadors" />
+            <End Role="PcConfigs" EntitySet="PcConfigs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_PcConfigs_dbo_SistemaOperacionals_SistemaOperacionalID" Association="Self.FK_dbo_PcConfigs_dbo_SistemaOperacionals_SistemaOperacionalID">
+            <End Role="SistemaOperacionals" EntitySet="SistemaOperacionals" />
+            <End Role="PcConfigs" EntitySet="PcConfigs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_PcConfigs_dbo_SSDs_SSDID" Association="Self.FK_dbo_PcConfigs_dbo_SSDs_SSDID">
+            <End Role="SSDs" EntitySet="SSDs" />
+            <End Role="PcConfigs" EntitySet="PcConfigs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_ProcessadorPlacaMaes_dbo_PlacaMaes_PlacaMaeID" Association="Self.FK_dbo_ProcessadorPlacaMaes_dbo_PlacaMaes_PlacaMaeID">
+            <End Role="PlacaMaes" EntitySet="PlacaMaes" />
+            <End Role="ProcessadorPlacaMaes" EntitySet="ProcessadorPlacaMaes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_ProcessadorPlacaMaes_dbo_Processadors_ProcessadorID" Association="Self.FK_dbo_ProcessadorPlacaMaes_dbo_Processadors_ProcessadorID">
+            <End Role="Processadors" EntitySet="Processadors" />
+            <End Role="ProcessadorPlacaMaes" EntitySet="ProcessadorPlacaMaes" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MachineBuildModelsContextoModelStoreContainer" CdmEntityContainer="Entities1">
+          <EntitySetMapping Name="C__MigrationHistory">
+            <EntityTypeMapping TypeName="MachineBuild.Models.ContextoModel.C__MigrationHistory">
+              <MappingFragment StoreEntitySet="__MigrationHistory">
+                <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+                <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CpuCoolers">
+            <EntityTypeMapping TypeName="MachineBuild.Models.ContextoModel.CpuCooler">
+              <MappingFragment StoreEntitySet="CpuCoolers">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+                <ScalarProperty Name="Marca" ColumnName="Marca" />
+                <ScalarProperty Name="PrecoMedio" ColumnName="PrecoMedio" />
+                <ScalarProperty Name="ConsumoWatts" ColumnName="ConsumoWatts" />
+                <ScalarProperty Name="Link" ColumnName="Link" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DiscoRigidoes">
+            <EntityTypeMapping TypeName="MachineBuild.Models.ContextoModel.DiscoRigido">
+              <MappingFragment StoreEntitySet="DiscoRigidoes">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+                <ScalarProperty Name="Marca" ColumnName="Marca" />
+                <ScalarProperty Name="PrecoMedio" ColumnName="PrecoMedio" />
+                <ScalarProperty Name="ConsumoWatts" ColumnName="ConsumoWatts" />
+                <ScalarProperty Name="Link" ColumnName="Link" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Fontes">
+            <EntityTypeMapping TypeName="MachineBuild.Models.ContextoModel.Fonte">
+              <MappingFragment StoreEntitySet="Fontes">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+                <ScalarProperty Name="Marca" ColumnName="Marca" />
+                <ScalarProperty Name="PrecoMedio" ColumnName="PrecoMedio" />
+                <ScalarProperty Name="Watts" ColumnName="Watts" />
+                <ScalarProperty Name="Link" ColumnName="Link" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Gabinetes">
+            <EntityTypeMapping TypeName="MachineBuild.Models.ContextoModel.Gabinete">
+              <MappingFragment StoreEntitySet="Gabinetes">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+                <ScalarProperty Name="Marca" ColumnName="Marca" />
+                <ScalarProperty Name="PrecoMedio" ColumnName="PrecoMedio" />
+                <ScalarProperty Name="ConsumoWatts" ColumnName="ConsumoWatts" />
+                <ScalarProperty Name="Link" ColumnName="Link" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Jogoes">
+            <EntityTypeMapping TypeName="MachineBuild.Models.ContextoModel.Jogo">
+              <MappingFragment StoreEntitySet="Jogoes">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+                <ScalarProperty Name="Desenvolvedora" ColumnName="Desenvolvedora" />
+                <ScalarProperty Name="ImageByte" ColumnName="ImageByte" />
+                <ScalarProperty Name="PcConfigID" ColumnName="PcConfigID" />
+                <ScalarProperty Name="PlacaVideoNota" ColumnName="PlacaVideoNota" />
+                <ScalarProperty Name="ProcessadorNota" ColumnName="ProcessadorNota" />
+                <ScalarProperty Name="configRecomendada" ColumnName="configRecomendada" />
+                <ScalarProperty Name="RecomendadaConfigID" ColumnName="RecomendadaConfigID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Memorias">
+            <EntityTypeMapping TypeName="MachineBuild.Models.ContextoModel.Memoria">
+              <MappingFragment StoreEntitySet="Memorias">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+                <ScalarProperty Name="Marca" ColumnName="Marca" />
+                <ScalarProperty Name="PrecoMedio" ColumnName="PrecoMedio" />
+                <ScalarProperty Name="ConsumoWatts" ColumnName="ConsumoWatts" />
+                <ScalarProperty Name="TipoRam" ColumnName="TipoRam" />
+                <ScalarProperty Name="Link" ColumnName="Link" />
+                <ScalarProperty Name="Frequencia" ColumnName="Frequencia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PcConfigs">
+            <EntityTypeMapping TypeName="MachineBuild.Models.ContextoModel.PcConfig">
+              <MappingFragment StoreEntitySet="PcConfigs">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="CpuCoolerID" ColumnName="CpuCoolerID" />
+                <ScalarProperty Name="ProcessadorID" ColumnName="ProcessadorID" />
+                <ScalarProperty Name="PlacaMaeID" ColumnName="PlacaMaeID" />
+                <ScalarProperty Name="PlacaVideoID" ColumnName="PlacaVideoID" />
+                <ScalarProperty Name="MemoriaID" ColumnName="MemoriaID" />
+                <ScalarProperty Name="SSDID" ColumnName="SSDID" />
+                <ScalarProperty Name="DiscoRigidoID" ColumnName="DiscoRigidoID" />
+                <ScalarProperty Name="GabineteID" ColumnName="GabineteID" />
+                <ScalarProperty Name="SistemaOperacionalID" ColumnName="SistemaOperacionalID" />
+                <ScalarProperty Name="FonteID" ColumnName="FonteID" />
+                <ScalarProperty Name="precoMedioFinal" ColumnName="precoMedioFinal" />
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pecas">
+            <EntityTypeMapping TypeName="MachineBuild.Models.ContextoModel.Peca">
+              <MappingFragment StoreEntitySet="Pecas">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PlacaMaes">
+            <EntityTypeMapping TypeName="MachineBuild.Models.ContextoModel.PlacaMae">
+              <MappingFragment StoreEntitySet="PlacaMaes">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+                <ScalarProperty Name="Marca" ColumnName="Marca" />
+                <ScalarProperty Name="PrecoMedio" ColumnName="PrecoMedio" />
+                <ScalarProperty Name="ConsumoWatts" ColumnName="ConsumoWatts" />
+                <ScalarProperty Name="Socket" ColumnName="Socket" />
+                <ScalarProperty Name="Barramento" ColumnName="Barramento" />
+                <ScalarProperty Name="TipoRam" ColumnName="TipoRam" />
+                <ScalarProperty Name="Link" ColumnName="Link" />
+                <ScalarProperty Name="FrequenciaMaxima" ColumnName="FrequenciaMaxima" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PlacaVideos">
+            <EntityTypeMapping TypeName="MachineBuild.Models.ContextoModel.PlacaVideo">
+              <MappingFragment StoreEntitySet="PlacaVideos">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+                <ScalarProperty Name="Marca" ColumnName="Marca" />
+                <ScalarProperty Name="PrecoMedio" ColumnName="PrecoMedio" />
+                <ScalarProperty Name="ConsumoWatts" ColumnName="ConsumoWatts" />
+                <ScalarProperty Name="NotaPerformance" ColumnName="NotaPerformance" />
+                <ScalarProperty Name="Barramento" ColumnName="Barramento" />
+                <ScalarProperty Name="Link" ColumnName="Link" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProcessadorPlacaMaes">
+            <EntityTypeMapping TypeName="MachineBuild.Models.ContextoModel.ProcessadorPlacaMae">
+              <MappingFragment StoreEntitySet="ProcessadorPlacaMaes">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ProcessadorID" ColumnName="ProcessadorID" />
+                <ScalarProperty Name="PlacaMaeID" ColumnName="PlacaMaeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Processadors">
+            <EntityTypeMapping TypeName="MachineBuild.Models.ContextoModel.Processador">
+              <MappingFragment StoreEntitySet="Processadors">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+                <ScalarProperty Name="Marca" ColumnName="Marca" />
+                <ScalarProperty Name="PrecoMedio" ColumnName="PrecoMedio" />
+                <ScalarProperty Name="ConsumoWatts" ColumnName="ConsumoWatts" />
+                <ScalarProperty Name="NotaPerformance" ColumnName="NotaPerformance" />
+                <ScalarProperty Name="Socket" ColumnName="Socket" />
+                <ScalarProperty Name="Link" ColumnName="Link" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SistemaOperacionals">
+            <EntityTypeMapping TypeName="MachineBuild.Models.ContextoModel.SistemaOperacional">
+              <MappingFragment StoreEntitySet="SistemaOperacionals">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+                <ScalarProperty Name="Marca" ColumnName="Marca" />
+                <ScalarProperty Name="PrecoMedio" ColumnName="PrecoMedio" />
+                <ScalarProperty Name="ConsumoWatts" ColumnName="ConsumoWatts" />
+                <ScalarProperty Name="Link" ColumnName="Link" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SSDs">
+            <EntityTypeMapping TypeName="MachineBuild.Models.ContextoModel.SSD">
+              <MappingFragment StoreEntitySet="SSDs">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+                <ScalarProperty Name="Marca" ColumnName="Marca" />
+                <ScalarProperty Name="PrecoMedio" ColumnName="PrecoMedio" />
+                <ScalarProperty Name="ConsumoWatts" ColumnName="ConsumoWatts" />
+                <ScalarProperty Name="Link" ColumnName="Link" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

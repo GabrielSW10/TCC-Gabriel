@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0d81a8ca7add4bee826459b244d3f7be" Name="Diagram1" ZoomLevel="57">
+        <EntityTypeShape EntityType="MachineBuild.Models.ContextoModel.C__MigrationHistory" Width="1.5" PointX="15.5" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MachineBuild.Models.ContextoModel.CpuCooler" Width="1.5" PointX="2.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MachineBuild.Models.ContextoModel.DiscoRigido" Width="1.5" PointX="5" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MachineBuild.Models.ContextoModel.Fonte" Width="1.5" PointX="2.875" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MachineBuild.Models.ContextoModel.Gabinete" Width="1.5" PointX="5" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MachineBuild.Models.ContextoModel.Jogo" Width="1.5" PointX="13.25" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MachineBuild.Models.ContextoModel.Memoria" Width="1.5" PointX="7.625" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MachineBuild.Models.ContextoModel.PcConfig" Width="1.5" PointX="7.875" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MachineBuild.Models.ContextoModel.PlacaMae" Width="1.5" PointX="5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MachineBuild.Models.ContextoModel.PlacaVideo" Width="1.5" PointX="11" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MachineBuild.Models.ContextoModel.Processador" Width="1.5" PointX="11" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MachineBuild.Models.ContextoModel.SistemaOperacional" Width="1.5" PointX="11" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MachineBuild.Models.ContextoModel.SSD" Width="1.5" PointX="13.25" PointY="2.75" IsExpanded="true" />
+        <AssociationConnector Association="MachineBuild.Models.ContextoModel.FK_dbo_PcConfigs_dbo_CpuCoolers_CpuCoolerID" ManuallyRouted="false" />
+        <AssociationConnector Association="MachineBuild.Models.ContextoModel.FK_dbo_PcConfigs_dbo_DiscoRigidoes_DiscoRigidoID" ManuallyRouted="false" />
+        <AssociationConnector Association="MachineBuild.Models.ContextoModel.FK_dbo_PcConfigs_dbo_Fontes_FonteID" ManuallyRouted="false" />
+        <AssociationConnector Association="MachineBuild.Models.ContextoModel.FK_dbo_PcConfigs_dbo_Gabinetes_GabineteID" ManuallyRouted="false" />
+        <AssociationConnector Association="MachineBuild.Models.ContextoModel.FK_dbo_Jogoes_dbo_PcConfigs_PcConfigID" ManuallyRouted="false" />
+        <AssociationConnector Association="MachineBuild.Models.ContextoModel.FK_dbo_Jogoes_dbo_PcConfigs_RecomendadaConfigID" ManuallyRouted="false" />
+        <AssociationConnector Association="MachineBuild.Models.ContextoModel.FK_dbo_PcConfigs_dbo_Memorias_MemoriaID" ManuallyRouted="false" />
+        <AssociationConnector Association="MachineBuild.Models.ContextoModel.FK_dbo_PcConfigs_dbo_PlacaMaes_PlacaMaeID" ManuallyRouted="false" />
+        <AssociationConnector Association="MachineBuild.Models.ContextoModel.FK_dbo_PcConfigs_dbo_PlacaVideos_PlacaVideoID" ManuallyRouted="false" />
+        <AssociationConnector Association="MachineBuild.Models.ContextoModel.FK_dbo_PcConfigs_dbo_Processadors_ProcessadorID" ManuallyRouted="false" />
+        <AssociationConnector Association="MachineBuild.Models.ContextoModel.FK_dbo_PcConfigs_dbo_SistemaOperacionals_SistemaOperacionalID" ManuallyRouted="false" />
+        <AssociationConnector Association="MachineBuild.Models.ContextoModel.FK_dbo_PcConfigs_dbo_SSDs_SSDID" ManuallyRouted="false" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

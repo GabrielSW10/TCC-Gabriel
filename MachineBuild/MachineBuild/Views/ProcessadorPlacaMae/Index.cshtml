@@ -1,21 +1,21 @@
 ﻿@model IEnumerable<MachineBuild.Models.Pecas.ProcessadorPlacaMae>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Compatiibilidade";
 }
 
-<h2>Index</h2>
+<h2>Compatibilidade</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Cadastrar Novo", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.PlacaMae.Nome)
+            @Html.DisplayName("Placa Mãe")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Processador.Nome)
+            @Html.DisplayName("Processador")
         </th>
         <th></th>
     </tr>
@@ -29,9 +29,9 @@
             @Html.DisplayFor(modelItem => item.Processador.Nome)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.ActionLink("Editar", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Excluir", "Delete", new { id=item.Id })
         </td>
     </tr>
 }

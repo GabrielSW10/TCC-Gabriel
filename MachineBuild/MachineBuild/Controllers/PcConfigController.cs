@@ -25,8 +25,70 @@ namespace MachineBuild.Controllers
         public JsonResult GetPlacaMaeList(int ProcessadorId)
         {
             db.Configuration.ProxyCreationEnabled = false;
-            List<ProcessadorPlacaMae> PlacaMaeList = db.ProcessadorPlacaMaes.Include("PlacaMae").Where(x => x.ProcessadorID == ProcessadorId).ToList();
+            List<Processador> processador = db.Processadors.Where(x => x.Id == ProcessadorId).ToList();
+            string socket = processador.FirstOrDefault().Socket;
+
+            List<PlacaMae> PlacaMaeList = db.PlacaMaes.Where(x => x.Socket == socket).ToList();
             return Json(PlacaMaeList, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult GetPlacaVideoList(int placaMaeId)
+        {
+            db.Configuration.ProxyCreationEnabled = false; 
+            List<PlacaMae> placaMae = db.PlacaMaes.Where(x => x.Id == placaMaeId).ToList();
+            string barramento = placaMae.FirstOrDefault().Barramento;
+
+            List<PlacaVideo> PlacaVideoList = db.PlacaVideos.Where(x => x.Barramento == barramento).ToList();
+            return Json(PlacaVideoList, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult GetMemoriaList(int placaMaeId)
+        {
+            db.Configuration.ProxyCreationEnabled = false;
+            List<PlacaMae> placaMae = db.PlacaMaes.Where(x => x.Id == placaMaeId).ToList();
+            string tipoRam = placaMae.FirstOrDefault().TipoRam;
+            double frequenciaMaxima = placaMae.FirstOrDefault().FrequenciaMaxima;
+
+            List<Memoria> PlacaMaeList = db.Memorias.Where(x => x.TipoRam == tipoRam && x.Frequencia < frequenciaMaxima).ToList();
+            return Json(PlacaMaeList, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult GetPrecoMedioFinal(int ProcessadorId, int PlacaMaeId, int PlacaVideoId, int MemoriaId, int SSDId, int DiscoRigidoId, int GabineteId, int CpuCoolerId, int SistemaOperacionalId, int FonteId)
+        {
+            db.Configuration.ProxyCreationEnabled = false;
+
+            List<Processador> processador = db.Processadors.Where(x => x.Id == ProcessadorId).ToList();
+            double processadorPreco = processador.FirstOrDefault().PrecoMedio;
+
+            List<PlacaMae> placaMae = db.PlacaMaes.Where(x => x.Id == PlacaMaeId).ToList();
+            double placaMaePreco = placaMae.FirstOrDefault().PrecoMedio;
+
+            List<PlacaVideo> placaVideo = db.PlacaVideos.Where(x => x.Id == PlacaVideoId).ToList();
+            double placaVideoPreco = placaVideo.FirstOrDefault().PrecoMedio;
+
+            List<Memoria> memoria = db.Memorias.Where(x => x.Id == MemoriaId).ToList();
+            double memoriaPreco = memoria.FirstOrDefault().PrecoMedio;
+
+            List<SSD> ssd = db.SSDs.Where(x => x.Id == SSDId).ToList();
+            double ssdPreco = ssd.FirstOrDefault().PrecoMedio;
+
+            List<DiscoRigido> discoRigido = db.DiscoRigidoes.Where(x => x.Id == DiscoRigidoId).ToList();
+            double discoRigidoPreco = discoRigido.FirstOrDefault().PrecoMedio;
+
+            List<Gabinete> gabinete = db.Gabinetes.Where(x => x.Id == GabineteId).ToList();
+            double gabinetePreco = gabinete.FirstOrDefault().PrecoMedio;
+
+            List<CpuCooler> cpuCooler = db.CpuCoolers.Where(x => x.Id == CpuCoolerId).ToList();
+            double cpuCoolerPreco = cpuCooler.FirstOrDefault().PrecoMedio;
+
+            List<SistemaOperacional> sistemaOperacional = db.SistemaOperacionals.Where(x => x.Id == SistemaOperacionalId).ToList();
+            double sistemaOperacionalPreco = sistemaOperacional.FirstOrDefault().PrecoMedio;
+
+            List<Fonte> fonte = db.Fontes.Where(x => x.Id == FonteId).ToList();
+            double fontePreco = fonte.FirstOrDefault().PrecoMedio;
+
+            String precoMedioFinal = (processadorPreco + placaMaePreco + placaVideoPreco + memoriaPreco + ssdPreco + discoRigidoPreco + gabinetePreco + cpuCoolerPreco + sistemaOperacionalPreco + fontePreco).ToString();
+            return Json(precoMedioFinal, JsonRequestBehavior.AllowGet);
         }
 
         public JsonResult GetFonteList(int ProcessadorId, int PlacaVideoId, int PlacaMaeId)
@@ -43,39 +105,6 @@ namespace MachineBuild.Controllers
             db.Configuration.ProxyCreationEnabled = false;
             List<Fonte> FonteList = db.Fontes.Where(x => x.Watts >= (ProcessadorWatts + PlacaVideoWatts + PlacaMaeWatts + 150)).ToList();
             return Json(FonteList, JsonRequestBehavior.AllowGet);
-        }
-
-        public JsonResult GetPerformanceLol()
-        {
-            List<Jogo> jogoLeague = db.Jogos.Where(x => x.Nome == "League of Legends").ToList();
-          //  double notaProcessadorLol = Double.Parse(jogoLeague.FirstOrDefault().ProcessadorNota);
-          //  double notaPlacaVideoLol = Double.Parse(jogoLeague.FirstOrDefault().PlacaVideoNota);
-
-            db.Configuration.ProxyCreationEnabled = false;
-           // List<Fonte> FonteList = db.Fontes.Where(x => x.Watts >= (150)).ToList();
-            return Json(jogoLeague, JsonRequestBehavior.AllowGet);
-        }
-
-        public JsonResult GetPerformanceCs(int ProcessadorId, int PlacaVideoId)
-        {
-            List<Jogo> jogoCs = db.Jogos.Where(x => x.Nome == "Counter Strike").ToList();
-        //    double notaProcessadorCs = Double.Parse(jogoCs.FirstOrDefault().ProcessadorNota);
-        //    double notaPlacaVideoCs = Double.Parse(jogoCs.FirstOrDefault().PlacaVideoNota);
-
-            db.Configuration.ProxyCreationEnabled = false;
-        //    List<Fonte> FonteList = db.Fontes.Where(x => x.Watts >= (150)).ToList();
-            return Json(jogoCs, JsonRequestBehavior.AllowGet);
-        }
-
-        public JsonResult GetPerformanceBf(int ProcessadorId, int PlacaVideoId)
-        {
-            List<Jogo> jogoBf = db.Jogos.Where(x => x.Nome == "Battlefield 5").ToList();
-        //    double notaProcessadorBf = Double.Parse(jogoBf.FirstOrDefault().ProcessadorNota);
-        //    double notaPlacaVideoBf = Double.Parse(jogoBf.FirstOrDefault().PlacaVideoNota);
-
-            db.Configuration.ProxyCreationEnabled = false;
-        //    List<Fonte> FonteList = db.Fontes.Where(x => x.Watts >= (150)).ToList();
-            return Json(jogoBf, JsonRequestBehavior.AllowGet);
         }
 
         // GET: PcConfig/Details/5
@@ -114,10 +143,10 @@ namespace MachineBuild.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Nome,ProcessadorID,PlacaMaeID,PlacaVideoID,MemoriaID,SSDID,DiscoRigidoID,GabineteID,CpuCoolerID,SistemaOperacionalID,FonteID")] PcConfig pcConfig)
+        public ActionResult Create([Bind(Include = "Id,Nome,ProcessadorID,PlacaMaeID,PlacaVideoID,MemoriaID,SSDID,DiscoRigidoID,GabineteID,CpuCoolerID,SistemaOperacionalID,FonteID, PrecoMedioFinal, tipo")] PcConfig pcConfig)
         {
             if (ModelState.IsValid)
-            {
+            {         
                 db.Configs.Add(pcConfig);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -166,7 +195,7 @@ namespace MachineBuild.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Nome,ProcessadorID,PlacaMaeID,PlacaVideoID,MemoriaID,SSDID,DiscoRigidoID,GabineteID,CpuCoolerID,SistemaOperacionalID,FonteID")] PcConfig pcConfig)
+        public ActionResult Edit([Bind(Include = "Id,Nome,ProcessadorID,PlacaMaeID,PlacaVideoID,MemoriaID,SSDID,DiscoRigidoID,GabineteID,CpuCoolerID,SistemaOperacionalID,FonteID, tipo")] PcConfig pcConfig)
         {
             if (ModelState.IsValid)
             {

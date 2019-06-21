@@ -63,10 +63,18 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.PcConfigID, "Configuração", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.PcConfigID, "Configuração Mínima", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("PcConfigID", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.PcConfigID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.RecomendadaConfigID, "Configuração Recomendada", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.RecomendadaConfigID, new SelectList(new List<Object> { new { value = "minima", text = "Mínima" }, new { value = "recomendada", text = "Recomendada" } }, "value", "text"), htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.RecomendadaConfigID, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -81,6 +89,30 @@
 <div>
     @Html.ActionLink("Voltar", "Index")
 </div>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script>
+    $(document).ready(function () {
+            $.get("/Jogo/GetConfigMinimaList", {}, function (data) {
+                $("#PcConfigID").empty();
+                $.each(data, function (index, row) {
+                    $("#PcConfigID").append("<option value='" + row.Id + "'>" + row.Nome + "</option>")
+                });
+            });
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+        $.get("/Jogo/GetConfigRecomendadaList", {}, function (data) {
+            $("#RecomendadaConfigID").empty();
+            $.each(data, function (index, row) {
+                $("#RecomendadaConfigID").append("<option value='" + row.Id + "'>" + row.Nome + "</option>")
+            });
+        });
+    });
+</script>
+
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

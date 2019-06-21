@@ -46,7 +46,7 @@ namespace MachineBuild.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Nome,Descricao,Marca,PrecoMedio,ConsumoWatts,NotaPerformance")] Processador processador)
+        public ActionResult Create([Bind(Include = "Id,Nome,Descricao,Marca,PrecoMedio,ConsumoWatts,NotaPerformance,Socket,Link")] Processador processador)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace MachineBuild.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Nome,Descricao,Marca,PrecoMedio,ConsumoWatts,NotaPerformance")] Processador processador)
+        public ActionResult Edit([Bind(Include = "Id,Nome,Descricao,Marca,PrecoMedio,ConsumoWatts,NotaPerformance,Socket,Link")] Processador processador)
         {
             if (ModelState.IsValid)
             {

@@ -1,102 +1,129 @@
 ﻿@model MachineBuild.Models.PcConfig
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detalhes";
 }
 
-<h2>Details</h2>
+<h2>Detalhes</h2>
 
 <div>
-    <h4>PcConfig</h4>
+    <h4>Configuração</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.CpuCooler.Nome)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CpuCooler.Nome)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DiscoRigido.Nome)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DiscoRigido.Nome)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Fonte.Nome)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Fonte.Nome)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Gabinete.Nome)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Gabinete.Nome)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Memoria.Nome)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Memoria.Nome)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PlacaMae.Nome)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PlacaMae.Nome)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PlacaVideo.Nome)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PlacaVideo.Nome)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Processador.Nome)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Processador.Nome)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.SistemaOperacional.Nome)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SistemaOperacional.Nome)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.SSD.Nome)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SSD.Nome)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Nome)
+            @Html.DisplayName("Nome")
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.Nome)
         </dd>
+
+        <dt>
+            @Html.DisplayName("CPU Cooler")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CpuCooler.Nome)
+            <a href=@Html.DisplayFor(model => model.CpuCooler.Link)>Link da Loja!</a>
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Disco Rígido")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiscoRigido.Nome)
+            <a href=@Html.DisplayFor(model => model.DiscoRigido.Link)>Link da Loja!</a>
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Fonte")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fonte.Nome)
+            <a href=@Html.DisplayFor(model => model.Fonte.Link)>Link da Loja!</a>
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Gabinete")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gabinete.Nome)
+            <a href=@Html.DisplayFor(model => model.Gabinete.Link)>Link da Loja!</a>
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Memoria")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Memoria.Nome)
+            <a href=@Html.DisplayFor(model => model.Memoria.Link)>Link da Loja!</a>
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Placa Mãe")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlacaMae.Nome)
+            <a href=@Html.DisplayFor(model => model.PlacaMae.Link)>Link da Loja!</a>
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Placa de Vídeo")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlacaVideo.Nome)
+            <a href=@Html.DisplayFor(model => model.PlacaVideo.Link)>Link da Loja!</a>
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Processador")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Processador.Nome, "processadorNome", "processadorNome")
+            <a href=@Html.DisplayFor(model => model.Processador.Link)>Link da Loja!</a>
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Sistema Operacional")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SistemaOperacional.Nome)
+            <a href=@Html.DisplayFor(model => model.SistemaOperacional.Link)>Link da Loja!</a>
+        </dd>
+
+        <dt>
+            @Html.DisplayName("SSD")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SSD.Nome)
+            <a href=@Html.DisplayFor(model => model.SSD.Link)>Link da Loja!</a>
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Tipo")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tipo)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Preço Médio Final")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.precoMedioFinal)
+        </dd>
+
     </dl>
 
     <table border="0" cellpadding="20" cellspacing="80">
@@ -110,6 +137,13 @@
 
 
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Editar", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Voltar", "Index")
 </p>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

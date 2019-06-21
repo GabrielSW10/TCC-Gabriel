@@ -1,13 +1,13 @@
 ﻿@model MachineBuild.Models.Memoria
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detalhes";
 }
 
-<h2>Details</h2>
+<h2>Detalhes</h2>
 
 <div>
-    <h4>Memoria</h4>
+    <h4>Memória</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -19,7 +19,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Descricao)
+            @Html.DisplayName("Descrição")
         </dt>
 
         <dd>
@@ -35,7 +35,23 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.PrecoMedio)
+            @Html.DisplayName("Tipo de RAM")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoRam)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Frequência")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Frequencia)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Preço Médio")
         </dt>
 
         <dd>
@@ -43,16 +59,24 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.ConsumoWatts)
+            @Html.DisplayName("Consumo em Watts")
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.ConsumoWatts)
         </dd>
 
+        <dt>
+            @Html.DisplayName("Link de Loja")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Link)
+        </dd>
+
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Editar", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Voltar", "Index")
 </p>

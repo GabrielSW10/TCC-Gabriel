@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MachineBuildModelsContextoModelStoreContainer" CdmEntityContainer="Entities1">
+    <EntitySetMapping Name="C__MigrationHistory">
+      <EntityTypeMapping TypeName="MachineBuild.Models.ContextoModel.C__MigrationHistory">
+        <MappingFragment StoreEntitySet="__MigrationHistory">
+          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+          <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CpuCoolers">
+      <EntityTypeMapping TypeName="MachineBuild.Models.ContextoModel.CpuCooler">
+        <MappingFragment StoreEntitySet="CpuCoolers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="Marca" ColumnName="Marca" />
+          <ScalarProperty Name="PrecoMedio" ColumnName="PrecoMedio" />
+          <ScalarProperty Name="ConsumoWatts" ColumnName="ConsumoWatts" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DiscoRigidoes">
+      <EntityTypeMapping TypeName="MachineBuild.Models.ContextoModel.DiscoRigido">
+        <MappingFragment StoreEntitySet="DiscoRigidoes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="Marca" ColumnName="Marca" />
+          <ScalarProperty Name="PrecoMedio" ColumnName="PrecoMedio" />
+          <ScalarProperty Name="ConsumoWatts" ColumnName="ConsumoWatts" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fontes">
+      <EntityTypeMapping TypeName="MachineBuild.Models.ContextoModel.Fonte">
+        <MappingFragment StoreEntitySet="Fontes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="Marca" ColumnName="Marca" />
+          <ScalarProperty Name="PrecoMedio" ColumnName="PrecoMedio" />
+          <ScalarProperty Name="Watts" ColumnName="Watts" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Gabinetes">
+      <EntityTypeMapping TypeName="MachineBuild.Models.ContextoModel.Gabinete">
+        <MappingFragment StoreEntitySet="Gabinetes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="Marca" ColumnName="Marca" />
+          <ScalarProperty Name="PrecoMedio" ColumnName="PrecoMedio" />
+          <ScalarProperty Name="ConsumoWatts" ColumnName="ConsumoWatts" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Jogoes">
+      <EntityTypeMapping TypeName="MachineBuild.Models.ContextoModel.Jogo">
+        <MappingFragment StoreEntitySet="Jogoes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="Desenvolvedora" ColumnName="Desenvolvedora" />
+          <ScalarProperty Name="ImageByte" ColumnName="ImageByte" />
+          <ScalarProperty Name="PcConfigID" ColumnName="PcConfigID" />
+          <ScalarProperty Name="PlacaVideoNota" ColumnName="PlacaVideoNota" />
+          <ScalarProperty Name="ProcessadorNota" ColumnName="ProcessadorNota" />
+          <ScalarProperty Name="configRecomendada" ColumnName="configRecomendada" />
+          <ScalarProperty Name="RecomendadaConfigID" ColumnName="RecomendadaConfigID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Memorias">
+      <EntityTypeMapping TypeName="MachineBuild.Models.ContextoModel.Memoria">
+        <MappingFragment StoreEntitySet="Memorias">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="Marca" ColumnName="Marca" />
+          <ScalarProperty Name="PrecoMedio" ColumnName="PrecoMedio" />
+          <ScalarProperty Name="ConsumoWatts" ColumnName="ConsumoWatts" />
+          <ScalarProperty Name="TipoRam" ColumnName="TipoRam" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="Frequencia" ColumnName="Frequencia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PcConfigs">
+      <EntityTypeMapping TypeName="MachineBuild.Models.ContextoModel.PcConfig">
+        <MappingFragment StoreEntitySet="PcConfigs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="CpuCoolerID" ColumnName="CpuCoolerID" />
+          <ScalarProperty Name="ProcessadorID" ColumnName="ProcessadorID" />
+          <ScalarProperty Name="PlacaMaeID" ColumnName="PlacaMaeID" />
+          <ScalarProperty Name="PlacaVideoID" ColumnName="PlacaVideoID" />
+          <ScalarProperty Name="MemoriaID" ColumnName="MemoriaID" />
+          <ScalarProperty Name="SSDID" ColumnName="SSDID" />
+          <ScalarProperty Name="DiscoRigidoID" ColumnName="DiscoRigidoID" />
+          <ScalarProperty Name="GabineteID" ColumnName="GabineteID" />
+          <ScalarProperty Name="SistemaOperacionalID" ColumnName="SistemaOperacionalID" />
+          <ScalarProperty Name="FonteID" ColumnName="FonteID" />
+          <ScalarProperty Name="precoMedioFinal" ColumnName="precoMedioFinal" />
+          <ScalarProperty Name="tipo" ColumnName="tipo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pecas">
+      <EntityTypeMapping TypeName="MachineBuild.Models.ContextoModel.Peca">
+        <MappingFragment StoreEntitySet="Pecas">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PlacaMaes">
+      <EntityTypeMapping TypeName="MachineBuild.Models.ContextoModel.PlacaMae">
+        <MappingFragment StoreEntitySet="PlacaMaes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="Marca" ColumnName="Marca" />
+          <ScalarProperty Name="PrecoMedio" ColumnName="PrecoMedio" />
+          <ScalarProperty Name="ConsumoWatts" ColumnName="ConsumoWatts" />
+          <ScalarProperty Name="Socket" ColumnName="Socket" />
+          <ScalarProperty Name="Barramento" ColumnName="Barramento" />
+          <ScalarProperty Name="TipoRam" ColumnName="TipoRam" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="FrequenciaMaxima" ColumnName="FrequenciaMaxima" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PlacaVideos">
+      <EntityTypeMapping TypeName="MachineBuild.Models.ContextoModel.PlacaVideo">
+        <MappingFragment StoreEntitySet="PlacaVideos">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="Marca" ColumnName="Marca" />
+          <ScalarProperty Name="PrecoMedio" ColumnName="PrecoMedio" />
+          <ScalarProperty Name="ConsumoWatts" ColumnName="ConsumoWatts" />
+          <ScalarProperty Name="NotaPerformance" ColumnName="NotaPerformance" />
+          <ScalarProperty Name="Barramento" ColumnName="Barramento" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProcessadorPlacaMaes">
+      <EntityTypeMapping TypeName="MachineBuild.Models.ContextoModel.ProcessadorPlacaMae">
+        <MappingFragment StoreEntitySet="ProcessadorPlacaMaes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ProcessadorID" ColumnName="ProcessadorID" />
+          <ScalarProperty Name="PlacaMaeID" ColumnName="PlacaMaeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Processadors">
+      <EntityTypeMapping TypeName="MachineBuild.Models.ContextoModel.Processador">
+        <MappingFragment StoreEntitySet="Processadors">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="Marca" ColumnName="Marca" />
+          <ScalarProperty Name="PrecoMedio" ColumnName="PrecoMedio" />
+          <ScalarProperty Name="ConsumoWatts" ColumnName="ConsumoWatts" />
+          <ScalarProperty Name="NotaPerformance" ColumnName="NotaPerformance" />
+          <ScalarProperty Name="Socket" ColumnName="Socket" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SistemaOperacionals">
+      <EntityTypeMapping TypeName="MachineBuild.Models.ContextoModel.SistemaOperacional">
+        <MappingFragment StoreEntitySet="SistemaOperacionals">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="Marca" ColumnName="Marca" />
+          <ScalarProperty Name="PrecoMedio" ColumnName="PrecoMedio" />
+          <ScalarProperty Name="ConsumoWatts" ColumnName="ConsumoWatts" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SSDs">
+      <EntityTypeMapping TypeName="MachineBuild.Models.ContextoModel.SSD">
+        <MappingFragment StoreEntitySet="SSDs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="Marca" ColumnName="Marca" />
+          <ScalarProperty Name="PrecoMedio" ColumnName="PrecoMedio" />
+          <ScalarProperty Name="ConsumoWatts" ColumnName="ConsumoWatts" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

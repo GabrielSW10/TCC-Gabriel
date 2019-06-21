@@ -1,0 +1,290 @@
+﻿@model MachineBuild.Models.Jogo
+
+@{
+    ViewBag.Title = "Configuração Jogo";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <h4>Jogo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayName("")
+        </dt>
+
+        <dd>
+            @{
+                var base64 = Convert.ToBase64String(Model.ImageByte);
+                var imgsrc = string.Format("data:image/gif;base64,{0}", base64);
+            }
+            <img src="@imgsrc" style="max-width:100px;max-height:100px" />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Descrição")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Desenvolvedora)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Desenvolvedora)
+        </dd>
+
+    </dl>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <h3 style="float:left">Configuração Mínima</h3>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <dl class="dl-horizontal" style="float:left">
+
+        <dt>
+            @Html.DisplayName("Processador")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PcConfig.Processador.Nome)
+            <a href=@Html.DisplayFor(model => model.PcConfig.Processador.Link)>Loja!</a>
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Placa Mãe")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PcConfig.PlacaMae.Nome)
+            <a href=@Html.DisplayFor(model => model.PcConfig.PlacaMae.Link)>Loja!</a>
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Placa de Vídeo")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PcConfig.PlacaVideo.Nome)
+            <a href=@Html.DisplayFor(model => model.PcConfig.PlacaVideo.Link)>Loja!</a>
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Memória")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PcConfig.Memoria.Nome)
+            <a href=@Html.DisplayFor(model => model.PcConfig.Memoria.Link)>Loja!</a>
+        </dd>
+
+        <dt>
+            @Html.DisplayName("SSD")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PcConfig.SSD.Nome)
+            <a href=@Html.DisplayFor(model => model.PcConfig.SSD.Link)>Loja!</a>
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Disco Rígido")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PcConfig.DiscoRigido.Nome)
+            <a href=@Html.DisplayFor(model => model.PcConfig.DiscoRigido.Link)>Loja!</a>
+        </dd>
+
+        <dt>
+            @Html.DisplayName("CPU Cooler")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PcConfig.CpuCooler.Nome)
+            <a href=@Html.DisplayFor(model => model.PcConfig.CpuCooler.Link)>Loja!</a>
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Gabinete")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PcConfig.Gabinete.Nome)
+            <a href=@Html.DisplayFor(model => model.PcConfig.Gabinete.Link)>Loja!</a>
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Fonte")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PcConfig.Fonte.Nome)
+            <a href=@Html.DisplayFor(model => model.PcConfig.Fonte.Link)>Loja!</a>
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Preco Médio R$")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PcConfig.precoMedioFinal)
+        </dd>
+
+    </dl>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h3 style="float:right">Configuração Recomendada</h3>
+    <dl class="dl-horizontal" style="float:right">
+
+        <dt>
+            @Html.DisplayName("Processador")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RecomendadaConfig.Processador.Nome)
+            <a href=@Html.DisplayFor(model => model.PcConfig.Processador.Link)>Loja!</a>
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Placa Mãe")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RecomendadaConfig.PlacaMae.Nome)
+            <a href=@Html.DisplayFor(model => model.PcConfig.PlacaMae.Link)>Loja!</a>
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Placa de Vídeo")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RecomendadaConfig.PlacaVideo.Nome)
+            <a href=@Html.DisplayFor(model => model.PcConfig.PlacaVideo.Link)>Loja!</a>
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Memória")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PcConfig.Memoria.Nome)
+            <a href=@Html.DisplayFor(model => model.PcConfig.Memoria.Link)>Loja!</a>
+        </dd>
+
+        <dt>
+            @Html.DisplayName("SSD")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PcConfig.SSD.Nome)
+            <a href=@Html.DisplayFor(model => model.PcConfig.SSD.Link)>Loja!</a>
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Disco Rígido")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PcConfig.DiscoRigido.Nome)
+            <a href=@Html.DisplayFor(model => model.PcConfig.DiscoRigido.Link)>Loja!</a>
+        </dd>
+
+        <dt>
+            @Html.DisplayName("CPU Cooler")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PcConfig.CpuCooler.Nome)
+            <a href=@Html.DisplayFor(model => model.PcConfig.CpuCooler.Link)>Loja!</a>
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Gabinete")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PcConfig.Gabinete.Nome)
+            <a href=@Html.DisplayFor(model => model.PcConfig.Gabinete.Link)>Loja!</a>
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Fonte")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PcConfig.Fonte.Nome)
+            <a href=@Html.DisplayFor(model => model.PcConfig.Fonte.Link)>Loja!</a>
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Preco Médio R$")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RecomendadaConfig.precoMedioFinal)
+        </dd>
+
+    </dl>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+</div>
+
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Voltar", "Jogos")
+</p>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+

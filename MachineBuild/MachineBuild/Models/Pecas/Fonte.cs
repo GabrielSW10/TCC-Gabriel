@@ -15,5 +15,7 @@ namespace MachineBuild.Models
         public string Marca { get; set; }
         public double PrecoMedio { get; set; }
         public double Watts { get; set; }
+        public string Link { get; set; }
+
     }
 }
